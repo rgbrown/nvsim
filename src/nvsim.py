@@ -31,7 +31,8 @@ class nvmodel:
         return mytemplate.render(model=self)
     
     def generate_matlab(self):
-        pass
+        mytemplate = Template(filename='templates/template.m')
+        return mytemplate.render(model=self)
 
 
 def load_model(filename):
@@ -94,3 +95,4 @@ if __name__ == "__main__":
     model = load_model('models/fitz2.txt')
     model.display()
     print model.generate_c()
+    print model.generate_matlab()
